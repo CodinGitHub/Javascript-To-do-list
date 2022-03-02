@@ -11,6 +11,11 @@ h1{
     color: #ffe5d2;
     text-align: center;
 }
+.stats{
+    margin: 25px 0 50px;
+    color: #ffe5d2;
+    text-align: center;
+}
 form{
     width: 90%;
     margin: 0 auto;

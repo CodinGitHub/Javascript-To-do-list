@@ -2,36 +2,66 @@
     margin: 0;
     padding: 0;
 }
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #e67265;
+}
 h1{
-    color: antiquewhite;
+    margin-top: 50px;
+    color: #ffe5d2;
     text-align: center;
 }
 form{
-    background-color: aqua;
-    width: 600px;
+    width: 90%;
     margin: 0 auto;
     border-radius: 8px;
     height: 100px;
     text-align: center;
     padding-top: 45px;
 }
+form input[type="text"]{
+    background-color: #e67265;
+    color: white;
+    border-style: none;
+    height: 40px;
+    font-size: 1.5em;
+}
+form input[type="text"]::placeholder{
+    color: #f89e8b;
+}
+form input[type="text"]:focus{
+    outline: none;
+}
+form input[type="button"]{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-style: none;
+    font-size: 2em;
+}
+form input[type="button"]:hover{
+    background-color: green;
+    cursor: pointer;
+    color: white;
+}
 .list-container{
-    width: 600px;
+    width: 90%;
     margin: 0 auto;
 }
-body{
-    background-color: darkslateblue;
-}
-label{
-    display:block;
+.task-container{
+    display:flex;
+    justify-content: space-between;
     margin: 4px 0;
     border-radius: 4px;
-    padding: 2px;
-    background-color: antiquewhite;
+    padding: 8px;
+    background-color: #ffe5d2;
     position: relative;
 }
-label input[type="button"]{
-    background-color: aqua;
-    position: absolute;
-    right: 10px;
+img{
+    width: 15px;
+    height: 15px;
+}
+img{
+    cursor: pointer;
+    color: white;
 }

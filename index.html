@@ -10,23 +10,18 @@
 <body>
     <h1>Javascript - To do List</h1>
     <form action="#">
-        <input type="text" placeholder="Escribe tu tarea aquí">
-        <input type="button" value="agregar" onclick="agregar()">
+        <input type="text" placeholder="Escribe tu tarea aquí...">
+        <input type="button" value="+" onclick="agregar()">
     </form>
     <div class="list-container">
-        <label>
-            <input type="checkbox">
-            Tarea 1
-            
-        </label>
-        <input type="button" value="delete" onclick="deleteAction()">
+        <!-- <div class="task-container" id="1">
+            <label>
+                <input type="checkbox">
+                Tarea 1
+            </label>
+            <img src="./images/delete.png" alt="delete icon" onclick="deleteTask()">
+        </div> -->
         
-        <label>
-            <input type="checkbox">
-            Tarea 2
-        </label>
-
-
     </div>
     <script src="./main.js"></script>
 </body>

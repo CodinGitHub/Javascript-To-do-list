@@ -1,15 +1,6 @@
-// seleccionar la lista padre
+// Nodos Padre
 var list = document.querySelector('.list-container');
 var stats = document.querySelector('.stats');
-
-//Espero un enter
-const input = document.querySelector('input[type="text"]');
-input.addEventListener('keypress', (event)=>{
-    if(event.keyCode === 13){
-        agregar();
-        input.value = '';
-    }
-});
 
 //Contador de tareas
 let taskCounter = 0;
@@ -21,7 +12,6 @@ let agregar = () => {
     //crear un div
     const newDiv = document.createElement('div');
     newDiv.setAttribute('class', 'task-container');
-    
     newDiv.setAttribute('id', taskCounter);
 
     //crear un label
@@ -33,10 +23,10 @@ let agregar = () => {
     newCheckBox.setAttribute('onclick', 'updateStats()');
 
     //crear una img
-    var imgClose = document.createElement('img');
-    imgClose.setAttribute('src', './images/delete.png');
-    imgClose.setAttribute('onclick', `deleteTask('${taskCounter}')`);
-    imgClose.setAttribute('class', 'closeBoton')
+    var iconClose = document.createElement('img');
+    iconClose.setAttribute('src', './images/delete.png');
+    iconClose.setAttribute('onclick', `deleteTask('${taskCounter}')`);
+    iconClose.setAttribute('class', 'closeBoton')
     
     //Obtengo el texto del input
     const input = document.querySelector('input[type="text"]');
@@ -46,7 +36,7 @@ let agregar = () => {
     newLabel.append(newCheckBox,  " " + newTask);
 
     //Agrego label  y img al Div
-    newDiv.append(newLabel, imgClose)
+    newDiv.append(newLabel, iconClose)
 
     //agrego el div a la lista
     list.append(newDiv);
@@ -69,3 +59,12 @@ let updateStats = () => {
     let elements = list.querySelectorAll('div');
     stats.innerHTML = `Tareas pendientes: ${elements.length} Completadas: ${checboxsSelected.length}`
 }
+
+//Espero un enter
+const input = document.querySelector('input[type="text"]');
+input.addEventListener('keypress', (event)=>{
+    if(event.keyCode === 13){
+        agregar();
+        input.value = '';
+    }
+});

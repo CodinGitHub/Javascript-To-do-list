@@ -16,14 +16,15 @@
     </form>
     
     <div class="list-container">
-        <!-- <div class="task-container" id="1">
+        <!-- *** -->
+        <div class="task-container" id="1">
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="updateStats()"> 
                 Tarea 1
             </label>
-            <img src="./images/delete.png" alt="delete icon" onclick="deleteTask()">
-        </div> -->
-        
+            <img src="./images/delete.png" onclick="deleteTask('1')" class="closeBoton">
+        </div>
+        <!-- *** -->
     </div>
     <div class="stats"></div>
     <script src="./main.js"></script>

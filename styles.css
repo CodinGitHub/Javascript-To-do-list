@@ -1,23 +1,35 @@
+:root{
+    --orange: #D95550;
+    --lightOrange: #DD6662;
+    --veryLightOrange: #f89e8b;
+    --gray: #55557B;
+}
 *{
     margin: 0;
     padding: 0;
 }
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #e67265;
+    background-color: var(--orange);
+}
+.logo{
+    position: absolute;
+    top: 0px;
+    right: 30px;
 }
 h1{
-    margin-top: 50px;
-    color: #ffe5d2;
+    margin-top: 200px;
+    color: white;
     text-align: center;
 }
 .stats{
     margin: 25px 0 50px;
     color: #ffe5d2;
     text-align: center;
+    font-size: 1.3em;
 }
 form{
-    width: 90%;
+    max-width: 600px;
     margin: 0 auto;
     border-radius: 8px;
     height: 100px;
@@ -25,19 +37,21 @@ form{
     padding-top: 45px;
 }
 form input[type="text"]{
-    background-color: #e67265;
+    background-color: var(--orange);
     color: white;
     border-style: none;
     height: 40px;
     font-size: 1.5em;
 }
 form input[type="text"]::placeholder{
-    color: #f89e8b;
+    color: var(--veryLightOrange);
 }
 form input[type="text"]:focus{
     outline: none;
 }
+
 form input[type="button"]{
+    color: var(--orange);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -45,28 +59,31 @@ form input[type="button"]{
     font-size: 2em;
 }
 form input[type="button"]:hover{
-    background-color: green;
+    background-color: var(--veryLightOrange);
     cursor: pointer;
     color: white;
 }
 .list-container{
-    width: 90%;
+    max-width: 600px;
     margin: 0 auto;
 }
 .task-container{
     display:flex;
     justify-content: space-between;
-    margin: 4px 0;
+    margin: 6px 0;
     border-radius: 4px;
-    padding: 8px;
-    background-color: #ffe5d2;
+    padding: 16px;
+    background-color: white;
     position: relative;
+    color: var(--gray);
+    font-size: 1.1em;
+    font-weight: 500;
 }
-img{
+.closeBoton{
     width: 15px;
     height: 15px;
 }
-img{
+.closeBoton{
     cursor: pointer;
     color: white;
 }

@@ -2,6 +2,14 @@
 var list = document.querySelector('.list-container');
 var stats = document.querySelector('.stats');
 
+//Espero un enter
+const input = document.querySelector('input[type="text"]');
+input.addEventListener('keypress', (event)=>{
+    if(event.keyCode === 13){
+        agregar();
+        input.value = '';
+    }
+});
 
 //Contador de tareas
 let taskCounter = 0;
@@ -22,12 +30,13 @@ let agregar = () => {
     //crear un checkbox
     const newCheckBox = document.createElement('input');
     newCheckBox.setAttribute('type', 'checkbox');
-    newCheckBox.setAttribute('onclick', 'selectedCheckBox()');
+    newCheckBox.setAttribute('onclick', 'updateStats()');
 
     //crear una img
     var imgClose = document.createElement('img');
     imgClose.setAttribute('src', './images/delete.png');
-    imgClose.setAttribute('onclick', `deleteTask('${taskCounter}')`)
+    imgClose.setAttribute('onclick', `deleteTask('${taskCounter}')`);
+    imgClose.setAttribute('class', 'closeBoton')
     
     //Obtengo el texto del input
     const input = document.querySelector('input[type="text"]');
@@ -42,25 +51,19 @@ let agregar = () => {
     //agrego el div a la lista
     list.append(newDiv);
 
-    //Actualizar estadisticas
-    let checboxsSelected = document.querySelectorAll('input[type="checkbox"]:checked');
-    let elements = list.querySelectorAll('div');
-    stats.innerHTML = `Tareas pendientes: ${elements.length} Completadas: ${checboxsSelected.length}`
+    updateStats();
+
 }
+
 function deleteTask(id) {
     //Remover Tarea
     let taskToDelete = document.getElementById(`${id}`);
     list.removeChild(taskToDelete);
     
-    //Actualizar estadisticas
-    let checboxsSelected = document.querySelectorAll('input[type="checkbox"]:checked');
-    let elements = list.querySelectorAll('div');
-    stats.innerHTML = `Tareas pendientes: ${elements.length} Completadas: ${checboxsSelected.length}`
+    updateStats();
 }
 
-let selectedCheckBox = () => {
-    
-    
+let updateStats = () => {
     //Actualizar estadisticas
     let checboxsSelected = document.querySelectorAll('input[type="checkbox"]:checked');
     let elements = list.querySelectorAll('div');

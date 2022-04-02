@@ -5,44 +5,32 @@ var stats = document.querySelector('.stats');
 //Contador de tareas
 let taskCounter = 0;
 
-let agregar = () => {
+var addBtn = document.querySelector('#addBtn');
 
-    taskCounter++;
+addBtn.addEventListener('click', agregar);
 
-    //crear un div
-    const newDiv = document.createElement('div');
-    newDiv.setAttribute('class', 'task-container');
-    newDiv.setAttribute('id', taskCounter);
-
-    //crear un label
-    const newLabel = document.createElement('label');
-
-    //crear un checkbox
-    const newCheckBox = document.createElement('input');
-    newCheckBox.setAttribute('type', 'checkbox');
-    newCheckBox.setAttribute('onclick', 'updateStats()');
-
-    //crear una img
-    var iconClose = document.createElement('img');
-    iconClose.setAttribute('src', './images/delete.png');
-    iconClose.setAttribute('onclick', `deleteTask('${taskCounter}')`);
-    iconClose.setAttribute('class', 'closeBoton')
+function agregar(){
+ 
+        console.log('Boton presionado');
     
-    //Obtengo el texto del input
-    const input = document.querySelector('input[type="text"]');
-    let newTask = input.value;
-
-    //Agrego el chekbox a la lista
-    newLabel.append(newCheckBox,  " " + newTask);
-
-    //Agrego label  y img al Div
-    newDiv.append(newLabel, iconClose)
-
-    //agrego el div a la lista
-    list.append(newDiv);
-
-    updateStats();
-
+        taskCounter++;
+        console.log('task counter' + taskCounter)
+        //Obtengo el texto del input
+        const input = document.querySelector('input[type="text"]');
+        let newValue = input.value;
+    
+        const newTask = ` 
+        <div class="task-container" id="${taskCounter}">
+            <label>
+                <input type="checkbox" onclick="updateStats()"> 
+                ${newValue}
+            </label>
+            <img src="./images/delete.png" onclick="deleteTask('${taskCounter}')" class="closeBoton">
+        </div>`
+    
+        list.innerHTML += newTask;
+        updateStats();
+        input.value = '';
 }
 
 function deleteTask(id) {
@@ -65,6 +53,6 @@ const input = document.querySelector('input[type="text"]');
 input.addEventListener('keypress', (event)=>{
     if(event.keyCode === 13){
         agregar();
-        input.value = '';
+        
     }
 });

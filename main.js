@@ -1,7 +1,3 @@
-// Nodos Padre
-var list = document.querySelector('.list-container');
-var stats = document.querySelector('.stats');
-
 //Contador de tareas
 let taskCounter = 0;
 

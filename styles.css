@@ -79,11 +79,10 @@ form input[type="submit"]:hover{
     font-size: 1.1em;
     font-weight: 500;
 }
-.closeBoton{
+.closeBtn{
     width: 15px;
     height: 15px;
 }
-.closeBoton{
+.closeBtn:hover{
     cursor: pointer;
-    color: white;
 }

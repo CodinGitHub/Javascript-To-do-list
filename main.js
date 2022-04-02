@@ -1,16 +1,11 @@
 //Contador de tareas
 let taskCounter = 0;
 
-// var addBtn = document.querySelector('#addBtn');
-
 addBtn.addEventListener('click', agregar);
 
 function agregar(){
- 
-        console.log('Boton presionado');
     
         taskCounter++;
-        console.log('task counter' + taskCounter)
         //Obtengo el texto del input
         const input = document.querySelector('input[type="text"]');
         let newValue = input.value;
@@ -21,13 +16,18 @@ function agregar(){
                 <input type="checkbox" onclick="updateStats()"> 
                 ${newValue}
             </label>
-            <img src="./images/delete.png" onclick="deleteTask('${taskCounter}')" class="closeBoton">
+            <img src="./images/delete.png" class="closeBtn" id="${taskCounter}">
         </div>`
-    
+          
         list.innerHTML += newTask;
         updateStats();
         input.value = '';
+   
 }
+
+list.addEventListener('click',(event)=>{
+    deleteTask(event.target.id);
+});
 
 function deleteTask(id) {
     //Remover Tarea

@@ -1,7 +1,7 @@
 //Contador de tareas
 let taskCounter = 0;
 
-var addBtn = document.querySelector('#addBtn');
+// var addBtn = document.querySelector('#addBtn');
 
 addBtn.addEventListener('click', agregar);
 
@@ -43,12 +43,3 @@ let updateStats = () => {
     let elements = list.querySelectorAll('div');
     stats.innerHTML = `Tareas pendientes: ${elements.length} Completadas: ${checboxsSelected.length}`
 }
-
-//Espero un enter
-const input = document.querySelector('input[type="text"]');
-input.addEventListener('keypress', (event)=>{
-    if(event.keyCode === 13){
-        agregar();
-        
-    }
-});

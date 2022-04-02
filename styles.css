@@ -50,7 +50,7 @@ form input[type="text"]:focus{
     outline: none;
 }
 
-form input[type="button"]{
+form input[type="submit"]{
     color: var(--orange);
     width: 40px;
     height: 40px;
@@ -58,7 +58,7 @@ form input[type="button"]{
     border-style: none;
     font-size: 2em;
 }
-form input[type="button"]:hover{
+form input[type="submit"]:hover{
     background-color: var(--veryLightOrange);
     cursor: pointer;
     color: white;

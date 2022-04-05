@@ -1,7 +1,7 @@
 //Contador de tareas
 let taskCounter = 0;
 
-addBtn.addEventListener('click', agregar);
+userInput.addEventListener('submit', agregar);
 
 function agregar(){
     
@@ -13,32 +13,32 @@ function agregar(){
         const newTask = ` 
         <div class="task-container" id="${taskCounter}">
             <label>
-                <input type="checkbox" onclick="updateStats()"> 
+                <input type="checkbox"> 
                 ${newValue}
             </label>
-            <img src="./images/delete.png" class="closeBtn" id="${taskCounter}">
+            <img src="./images/delete.png" class="closeBtn">
         </div>`
           
         list.innerHTML += newTask;
+        input.value = ''; 
         updateStats();
-        input.value = '';
-   
 }
 
 list.addEventListener('click',(event)=>{
-    deleteTask(event.target.id);
+    if (event.srcElement.nodeName == 'INPUT'){
+        updateStats();
+    }else if(event.srcElement.nodeName == 'IMG'){
+        deleteTask(event.target.offsetParent.id);
+    }
 });
 
 function deleteTask(id) {
-    //Remover Tarea
     let taskToDelete = document.getElementById(`${id}`);
     list.removeChild(taskToDelete);
-    
     updateStats();
 }
 
 let updateStats = () => {
-    //Actualizar estadisticas
     let checboxsSelected = document.querySelectorAll('input[type="checkbox"]:checked');
     let elements = list.querySelectorAll('div');
     stats.innerHTML = `Tareas pendientes: ${elements.length} Completadas: ${checboxsSelected.length}`

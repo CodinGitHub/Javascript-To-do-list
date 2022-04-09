@@ -1,28 +1,31 @@
-//Contador de tareas
-let taskCounter = 0;
+let IdCounter = 0;
 
 userInput.addEventListener('submit', agregar);
 
 function agregar(){
     
-        taskCounter++;
-        //Obtengo el texto del input
+        IdCounter++;
+
+        //Recoger texto
         const input = document.querySelector('input[type="text"]');
         let newValue = input.value;
-    
+
+        //Agregar tarea
         const newTask = ` 
-        <div class="task-container" id="${taskCounter}">
+        <div class="task-container" id="${IdCounter}">
             <label>
                 <input type="checkbox"> 
                 ${newValue}
             </label>
             <img src="./images/delete.png" class="closeBtn">
         </div>`
-          
         list.innerHTML += newTask;
+
         input.value = ''; 
+
         updateStats();
 }
+
 
 list.addEventListener('click',(event)=>{
     if (event.srcElement.nodeName == 'INPUT'){

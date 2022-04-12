@@ -32,7 +32,7 @@ list.addEventListener('click', (event)=>{
     if(event.srcElement.nodeName == 'INPUT'){
         updateStats();
     }else if(event.srcElement.nodeName == 'IMG'){
-        deleteTask(event.target.offsetParent.id);
+        deleteTask(event.srcElement.parentNode.id);
     }
 });
 

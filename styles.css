@@ -3,6 +3,7 @@
     --lightOrange: #DD6662;
     --veryLightOrange: #f89e8b;
     --gray: #55557B;
+    --white: #ffffff;
 }
 *{
     margin: 0;
@@ -19,28 +20,19 @@ body{
 }
 h1{
     margin-top: 200px;
-    color: white;
+    color: var(--white);
     text-align: center;
-}
-#stats{
-    margin: 25px 0 50px;
-    color: #ffe5d2;
-    text-align: center;
-    font-size: 1.3em;
 }
 form{
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: 8px;
-    height: 100px;
+    /* border: 1px solid; */
+    max-width: 400px;
+    margin: 45px auto;
     text-align: center;
-    padding-top: 45px;
 }
 form input[type="text"]{
     background-color: var(--orange);
-    color: white;
+    color: var(--white);
     border-style: none;
-    height: 40px;
     font-size: 1.5em;
 }
 form input[type="text"]::placeholder{
@@ -49,7 +41,6 @@ form input[type="text"]::placeholder{
 form input[type="text"]:focus{
     outline: none;
 }
-
 form input[type="submit"]{
     color: var(--orange);
     width: 40px;
@@ -64,17 +55,16 @@ form input[type="submit"]:hover{
     color: white;
 }
 .list-container{
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
 }
 .task-container{
+    background-color: white;
     display:flex;
     justify-content: space-between;
-    margin: 6px 0;
+    margin-bottom: 6px;
     border-radius: 4px;
     padding: 16px;
-    background-color: white;
-    position: relative;
     color: var(--gray);
     font-size: 1.1em;
     font-weight: 500;
@@ -85,4 +75,10 @@ form input[type="submit"]:hover{
 }
 .closeBtn:hover{
     cursor: pointer;
+}
+#stats{
+    margin: 25px 0 50px;
+    color: #ffe5d2;
+    text-align: center;
+    font-size: 1.3em;
 }

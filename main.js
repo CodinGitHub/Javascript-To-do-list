@@ -1,7 +1,8 @@
 let IdCounter = 0;
 const input = document.querySelector('input[type="text"]');
 
-userInput.addEventListener('submit', ()=>{
+userInput.addEventListener('submit', (event)=>{
+    event.preventDefault();
     if(input.value.trim().length != 0){
         addTask();
     }
